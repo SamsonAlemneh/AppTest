@@ -193,7 +193,7 @@ Widget build(BuildContext context) {
       appBar: AppBar (
         title: Text('Ninja ID Card'),
         centerTitle: true,
-        backgroundColor: Colors.grey[850],
+        backgroundColor: Colors.green[850],
         elevation: 0.0,
 
         actions: [
@@ -253,7 +253,7 @@ Widget build(BuildContext context) {
             Text(
               'Chun-Li',
               style: TextStyle(
-                color: Colors.brown,
+                color: Colors.yellowAccent,
                 letterSpacing: 2.0,
                 fontSize: 20.0,
                 fontWeight: FontWeight.bold
@@ -288,9 +288,9 @@ Widget build(BuildContext context) {
                 Text(
                   'Chun_li@thenet.org',
                   style: TextStyle(
-                    color: Colors.yellow,
-                    fontSize: 20.0,
-                    letterSpacing: 1.0,
+                    color: Colors.blueAccent,
+                    fontSize: 25.0,
+                    letterSpacing: 2.0,
                   ),
                 ),
               ],
