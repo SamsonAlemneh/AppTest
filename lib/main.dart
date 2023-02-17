@@ -240,7 +240,7 @@ Widget build(BuildContext context) {
               ),
             ),Divider(
               height: 30.0,
-              color: Colors.yellow[300],
+              color: Colors.blueAccent[300],
             ),
             Text(
                 'NAME',
@@ -253,7 +253,7 @@ Widget build(BuildContext context) {
             Text(
               'Chun-Li',
               style: TextStyle(
-                color: Colors.amberAccent,
+                color: Colors.brown,
                 letterSpacing: 2.0,
                 fontSize: 20.0,
                 fontWeight: FontWeight.bold
@@ -267,7 +267,7 @@ Widget build(BuildContext context) {
                 letterSpacing: 2.0,
               ),
             ),
-            SizedBox(height: 30.0),
+            SizedBox(height: 20.0),
             Text(
               '8',
               style: TextStyle(
@@ -282,7 +282,7 @@ Widget build(BuildContext context) {
               children: <Widget>[
                 Icon(
                   Icons.email,
-                  color: Colors.grey[400],
+                  color: Colors.yellow[400],
                 ),
                 SizedBox(width: 10.0),
                 Text(
