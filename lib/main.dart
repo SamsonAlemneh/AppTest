@@ -196,7 +196,37 @@ Widget build(BuildContext context) {
         backgroundColor: Colors.grey[850],
         elevation: 0.0,
 
+        actions: [
+          PopupMenuButton(
+            color: Colors.lightBlueAccent,
+            icon: Icon(Icons.settings),
+            itemBuilder: (context)=>[
+            PopupMenuItem(child: Row(
+          children: [
+          Icon(Icons.sunny,
+            color: Colors.white70,),
+          SizedBox(width: 15.0),
+          Text('Glow Effect',
+            style: TextStyle(
+                fontSize: 12.0
+            ),),
+        ],
+      )),
 
+    PopupMenuItem(child: Row(
+    children: [
+
+    Icon(Icons.video_call_rounded,
+    color: Colors.white70,),
+    SizedBox(width: 15.0),
+    Text('VR View',
+    style: TextStyle(
+    fontSize: 12.0
+    ),),
+    ],
+    )),
+            ],
+      )
       ),
       body: Padding(
         padding: EdgeInsets.fromLTRB(30.0, 40.0, 30.0, 0.0),
