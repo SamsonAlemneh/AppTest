@@ -1,3 +1,7 @@
+import 'dart:html';
+
+import 'package:firstapptest/page/page1.dart';
+import 'package:firstapptest/page/page2.dart';
 import 'package:flutter/material.dart';
 //import 'package:flutter/rendering.dart';
 /*
@@ -181,52 +185,59 @@ class Home extends StatelessWidget {
 }
 */
 
-void main () => runApp(MaterialApp(
-    home: NinjaCard(),
-));
+void main() => runApp(MaterialApp(
+      home: NinjaCard(),
+    ));
 
 class NinjaCard extends StatelessWidget {
   @override
-Widget build(BuildContext context) {
+  Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.grey[900],
-      appBar: AppBar (
+      backgroundColor: Colors.blue[900],
+      appBar: AppBar(
         title: Text('Ninja ID Card'),
         centerTitle: true,
-        backgroundColor: Colors.grey[850],
+        backgroundColor: Colors.green[850],
         elevation: 0.0,
-
         actions: [
-          PopupMenuButton(
+          PopupMenuButton<int>(
             color: Colors.lightBlueAccent,
             icon: Icon(Icons.settings),
-            itemBuilder: (context)=>[
-            PopupMenuItem(child: Row(
-          children: [
-          Icon(Icons.sunny,
-            color: Colors.white70,),
-          SizedBox(width: 15.0),
-          Text('Glow Effect',
-            style: TextStyle(
-                fontSize: 12.0
-            ),),
-        ],
-      )),
-
-    PopupMenuItem(child: Row(
-    children: [
-
-    Icon(Icons.video_call_rounded,
-    color: Colors.white70,),
-    SizedBox(width: 15.0),
-    Text('VR View',
-    style: TextStyle(
-    fontSize: 12.0
-    ),),
-    ],
-    )),
+            onSelected: (item) => onSelected(context, item),
+            itemBuilder: (context) => [
+              PopupMenuItem<int>(
+                  value: 0,
+                  child: Row(
+                    children: [
+                      Icon(
+                        Icons.sunny,
+                        color: Colors.white70,
+                      ),
+                      SizedBox(width: 15.0),
+                      Text(
+                        'Glow Effect',
+                        style: TextStyle(fontSize: 12.0),
+                      ),
+                    ],
+                  )),
+              PopupMenuItem<int>(
+                  value: 1,
+                  child: Row(
+                    children: [
+                      Icon(
+                        Icons.voicemail_outlined,
+                        color: Colors.white70,
+                      ),
+                      SizedBox(width: 15.0),
+                      Text(
+                        'VR View',
+                        style: TextStyle(fontSize: 12.0,),
+                      ),
+                    ],
+                  )),
             ],
-      )
+          )
+        ],
       ),
       body: Padding(
         padding: EdgeInsets.fromLTRB(30.0, 40.0, 30.0, 0.0),
@@ -238,12 +249,13 @@ Widget build(BuildContext context) {
                 backgroundImage: AssetImage('assets/picture.jpg'),
                 radius: 60.0,
               ),
-            ),Divider(
+            ),
+            Divider(
               height: 30.0,
               color: Colors.blueAccent[300],
             ),
             Text(
-                'NAME',
+              'NAME',
               style: TextStyle(
                 color: Colors.blue,
                 letterSpacing: 3.0,
@@ -253,11 +265,10 @@ Widget build(BuildContext context) {
             Text(
               'Chun-Li',
               style: TextStyle(
-                color: Colors.brown,
-                letterSpacing: 2.0,
-                fontSize: 20.0,
-                fontWeight: FontWeight.bold
-              ),
+                  color: Colors.yellowAccent,
+                  letterSpacing: 2.0,
+                  fontSize: 20.0,
+                  fontWeight: FontWeight.bold),
             ),
             SizedBox(height: 30.0),
             Text(
@@ -271,10 +282,10 @@ Widget build(BuildContext context) {
             Text(
               '8',
               style: TextStyle(
-                  color: Colors.blueAccent,
-                  letterSpacing: 2.0,
-                  fontSize: 20.0,
-                  fontWeight: FontWeight.bold,
+                color: Colors.blueAccent,
+                letterSpacing: 2.0,
+                fontSize: 20.0,
+                fontWeight: FontWeight.bold,
               ),
             ),
             SizedBox(height: 30.0),
@@ -288,9 +299,9 @@ Widget build(BuildContext context) {
                 Text(
                   'Chun_li@thenet.org',
                   style: TextStyle(
-                    color: Colors.yellow,
-                    fontSize: 20.0,
-                    letterSpacing: 1.0,
+                    color: Colors.blueAccent,
+                    fontSize: 25.0,
+                    letterSpacing: 2.0,
                   ),
                 ),
               ],
@@ -299,7 +310,19 @@ Widget build(BuildContext context) {
         ),
       ),
     );
- }
+  }
+
+  void onSelected(BuildContext context, int item) {
+    switch (item) {
+      case 0:
+        Navigator.of(context).push(
+          MaterialPageRoute(builder: (context) => const Page1()),
+        );
+        break;
+      case 1:
+        Navigator.of(context).push(
+          MaterialPageRoute(builder: (context) => const Page2()),
+        );
+    }
+  }
 }
-
-
